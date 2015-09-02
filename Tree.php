@@ -2,6 +2,7 @@
 namespace TreeBuilder;
 
 use TreeBuilder\Base\Branch;
+use TreeBuilder\Base\Adapter;
 
 /**
  * Tree builder class - generates the enire tree based on \TreeBuilder\Branch
@@ -10,7 +11,8 @@ use TreeBuilder\Base\Branch;
  * @author Adrian Tilita <adrian@tilita.ro>
  * @version 1.0
  */
-class Tree {
+class Tree
+{
     /**
      * Wheather to log debug details
      * @var boolean
@@ -40,6 +42,12 @@ class Tree {
      * @var array
      */
     private $compiledTree = array();
+
+    /**
+     * A delagated adapter for the output
+     * @var Adapter
+     */
+    private $delegatedAdapter;
 
     /**
      * Enables debug mode
@@ -72,6 +80,17 @@ class Tree {
     }
 
     /**
+     * Delegate an adapter for the wanted output
+     * @param Adapter $adapter
+     * @return \TreeBuilder\Tree
+     */
+    public function registerAdapter(Adapter $adapter)
+    {
+        $this->delegatedAdapter = $adapter;
+        return $this;
+    }
+
+    /**
      * Add a new TreeItem
      * @param TreeItem $item
      */
@@ -89,6 +108,11 @@ class Tree {
     {
         if ($this->compiled === false) {
             $this->buildTree();
+        }
+        if ($this->delegatedAdapter != null) {
+            $this->delegatedAdapter->setRawData($this->branches);
+            $this->delegatedAdapter->setTree($this->compiledTree);
+            return $this->delegatedAdapter->adapt();
         }
         return $this->compiledTree;
     }
@@ -124,7 +148,8 @@ class Tree {
                     $this->branches[$item->getParentId()]->addChild($item);
                 } else {
                     if ($this->isDebugEnabled()) {
-                        $this->logDebug("Parent of {$item->getId()} with id {$item->getParentId()} is not added. Skipping adding the current branch");
+                        $this->logDebug("Parent of {$item->getId()} with id {$item->getParentId()} is not added."
+                        . "Skipping adding the current branch");
                     }
                     continue;
                 }
@@ -151,5 +176,4 @@ class Tree {
     {
         $this->debugData .= $string . '<br/>';
     }
-
 }

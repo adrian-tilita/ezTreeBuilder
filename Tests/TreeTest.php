@@ -169,5 +169,4 @@ class TreeTest extends \PHPUnit_Framework_TestCase
         $treeBuilder->buildTree();
         return $treeBuilder;
     }
-
 }

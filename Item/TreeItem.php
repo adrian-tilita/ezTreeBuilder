@@ -6,14 +6,15 @@ use TreeBuilder\Base\AbstractBranch;
 
 /**
  * TreeItem class - Limited concern to caller
- * 
+ *
  * Used to build \TreeBuilder\Base\Branch to be used by \TreeBuilder\Tree
  *
  * @package TreeBuilder
  * @author Adrian Tilita <adrian@tilita.ro>
  * @version 1.0
  */
-class TreeItem extends AbstractBranch implements Branch {
+class TreeItem extends AbstractBranch implements Branch
+{
     /**
      * An identifier for the tree item
      * @var int
@@ -91,5 +92,4 @@ class TreeItem extends AbstractBranch implements Branch {
     {
         return $this->data;
     }
-
 }

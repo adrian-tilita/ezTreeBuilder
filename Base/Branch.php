@@ -9,7 +9,8 @@ namespace TreeBuilder\Base;
  * @version 1.0
  * @interace
  */
-interface Branch {
+interface Branch
+{
     /**
      * Set the tree item id
      * @param int $value

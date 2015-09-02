@@ -2,6 +2,7 @@
 namespace TreeBuilder\Base;
 
 use TreeBuilder\Base\Branch;
+
 /**
  * Branch asbtract class - Limited concern to \TreeBuilder\Tree
  *
@@ -10,7 +11,8 @@ use TreeBuilder\Base\Branch;
  * @version 1.0
  * @abstract
  */
-abstract class AbstractBranch {
+abstract class AbstractBranch
+{
     /**
      * Container for current branch children
      * @var array
