@@ -26,6 +26,24 @@ abstract class AbstractBranch
     private $parent;
 
     /**
+     * The depth of the item
+     * @var int
+     */
+    private $depth;
+
+    /**
+     * The left number of the branch
+     * @var int
+     */
+    private $left;
+
+    /**
+     * The right number of the branch
+     * @var int
+     */
+    private $right;
+
+    /**
      * Set the Parent of the current branch
      * @param \TreeBuilder\Base\Branch $item
      * @return \TreeBuilder\Base\Branch
@@ -93,5 +111,66 @@ abstract class AbstractBranch
             throw new \Exception('The current branch has no childs!');
         }
         return $this->children;
+    }
+
+    /**
+     * Set the branch depth
+     * @param int $depth
+     * @return \TreeBuilder\Base\AbstractBranch
+     */
+    public function setDepth($depth)
+    {
+        $this->depth = $depth;
+        return $this;
+    }
+
+    /**
+     * Get the branch depth
+     * @return int
+     */
+    public function getDepth()
+    {
+        return $this->depth;
+    }
+
+    /**
+     * Set Tree Left value
+     * @param int $value
+     * @return \TreeBuilder\Base\AbstractBranch
+     */
+    public function setLeft($value)
+    {
+        $this->left = $value;
+        return $this;
+    }
+
+    /**
+     * Get Tree Left value
+     * @return int
+     */
+    public function getLeft()
+    {
+        return $this->left;
+    }
+
+
+    /**
+     * Set Tree Right value
+     * @param int $value
+     * @return \TreeBuilder\Base\AbstractBranch
+     */
+    public function setRight($value)
+    {
+        $this->right = $value;
+        return $this;
+    }
+
+    /**
+     * Get Tree Right value
+     * @return int
+     */
+    public function getRight()
+    {
+        return $this->right;
     }
 }

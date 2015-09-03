@@ -49,6 +49,9 @@ class ArrayAdapter extends AbstractAdapter implements Adapter
         $returnedArray['id'] = $item->getId();
         $returnedArray['parent_id'] = $item->hasParent() ? $item->getParentId() : 0;
         $returnedArray['data'] = $item->getData();
+        $returnedArray['depth'] = $item->getDepth();
+        $returnedArray['left'] = $item->getLeft();
+        $returnedArray['right'] = $item->getRight();
         return $returnedArray;
     }
 }

@@ -29,6 +29,7 @@ foreach ($items as $item) {
     $treeBuilder->addBranch($data);
 }
 // get the normal type of tree
+$treeBuilder->setBuildMode($treeBuilder::BUILD_MODE_COMPLETE);
 $objectTree = $treeBuilder->getTree();
 echo "<pre>";
 var_dump($objectTree);
@@ -39,4 +40,9 @@ $array = $treeBuilder->registerAdapter(new ArrayAdapter())
         ->getTree();
 echo "<pre>";
 var_dump($array);
+echo "</pre>";
+
+$branch = $treeBuilder->getBranchById(507);
+echo "<pre>";
+var_dump($branch);
 echo "</pre>";
