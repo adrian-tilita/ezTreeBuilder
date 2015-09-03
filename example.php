@@ -4,6 +4,7 @@ namespace TreeBuilder;
 use TreeBuilder\Tree;
 use TreeBuilder\Item\TreeItem;
 use TreeBuilder\Adapter\ArrayAdapter;
+use TreeBuilder\Adapter\LinearArrayAdapter;
 
 require 'autoload.php';
 
@@ -45,4 +46,11 @@ echo "</pre>";
 $branch = $treeBuilder->getBranchById(507);
 echo "<pre>";
 var_dump($branch);
+echo "</pre>";
+
+// add a second adapter
+$array = $treeBuilder->registerAdapter(new LinearArrayAdapter())
+        ->getTree();
+echo "<pre>";
+var_dump($array);
 echo "</pre>";

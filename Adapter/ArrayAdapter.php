@@ -27,7 +27,7 @@ class ArrayAdapter extends AbstractAdapter implements Adapter
         $returnedArray = array();
         $iteration = 0;
         foreach ($items as $item) {
-            $returnedArray[$iteration] = $this->branchToArray($item);
+            $returnedArray[$iteration] = $item->getAsArray();
             if ($item->hasChildren() === true) {
                 $returnedArray[$iteration]['children'] = $this->getArrayItems($item->getChildren());
             } else {
@@ -35,23 +35,6 @@ class ArrayAdapter extends AbstractAdapter implements Adapter
             }
             $iteration++;
         }
-        return $returnedArray;
-    }
-
-    /**
-     * Converts a tree branch to an array
-     * @param TreeItem $item
-     * @return array
-     */
-    private function branchToArray(TreeItem $item)
-    {
-        $returnedArray = array();
-        $returnedArray['id'] = $item->getId();
-        $returnedArray['parent_id'] = $item->hasParent() ? $item->getParentId() : 0;
-        $returnedArray['data'] = $item->getData();
-        $returnedArray['depth'] = $item->getDepth();
-        $returnedArray['left'] = $item->getLeft();
-        $returnedArray['right'] = $item->getRight();
         return $returnedArray;
     }
 }

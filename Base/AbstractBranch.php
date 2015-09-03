@@ -173,4 +173,20 @@ abstract class AbstractBranch
     {
         return $this->right;
     }
+
+    /**
+     * Get the entire Item as array
+     * @return array
+     */
+    public function getAsArray()
+    {
+        $returnedArray = array();
+        $returnedArray['id'] = $this->getId();
+        $returnedArray['parent_id'] = $this->hasParent() ? $this->getParentId() : 0;
+        $returnedArray['data'] = $this->getData();
+        $returnedArray['depth'] = $this->getDepth();
+        $returnedArray['left'] = $this->getLeft();
+        $returnedArray['right'] = $this->getRight();
+        return $returnedArray;
+    }
 }

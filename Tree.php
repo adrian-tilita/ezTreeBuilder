@@ -27,7 +27,7 @@ class Tree
 
     /**
      * Builds the full type off tree, containing all off the above
-     * @const int 
+     * @const int
      */
     const BUILD_MODE_COMPLETE = 2;
 
@@ -116,7 +116,7 @@ class Tree
 
     /**
      * Set the build mode identified by local constants
-     * @param int $value 
+     * @param int $value
      * @return \TreeBuilder\Tree
      */
     public function setBuildMode($value)
