@@ -4,7 +4,7 @@ namespace ezTreeBuilder\Base;
 /**
  * Base interface for a branch item
  *
- * @package TreeBuilder
+ * @package ezTreeBuilder
  * @author Adrian Tilita <adrian@tilita.ro>
  * @version 1.0
  * @interace

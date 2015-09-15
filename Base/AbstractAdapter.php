@@ -6,7 +6,7 @@ use ezTreeBuilder\Base\Adapter;
 /**
  * The base of an Adapter
  *
- * @package TreeBuilder
+ * @package ezTreeBuilder
  * @author Adrian Tilita <adrian@tilita.ro>
  * @abstract
  * @version 1.0

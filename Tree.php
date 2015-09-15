@@ -7,7 +7,7 @@ use ezTreeBuilder\Base\Adapter;
 /**
  * Tree builder class - generates the enire tree based on \TreeBuilder\Branch
  *
- * @package TreeBuilder
+ * @package ezTreeBuilder
  * @author Adrian Tilita <adrian@tilita.ro>
  * @version 1.0
  */

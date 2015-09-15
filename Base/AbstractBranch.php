@@ -6,7 +6,7 @@ use ezTreeBuilder\Base\Branch;
 /**
  * Branch asbtract class - Limited concern to \TreeBuilder\Tree
  *
- * @package TreeBuilder
+ * @package ezTreeBuilder
  * @author Adrian Tilita <adrian@tilita.ro>
  * @version 1.0
  * @abstract

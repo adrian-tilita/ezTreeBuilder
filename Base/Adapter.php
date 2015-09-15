@@ -4,7 +4,7 @@ namespace ezTreeBuilder\Base;
 /**
  * Minimum of an adapter public methods
  *
- * @package TreeBuilder
+ * @package ezTreeBuilder
  * @author Adrian Tilita <adrian@tilita.ro>
  * @inteface
  * @version 1.0

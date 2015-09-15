@@ -9,7 +9,7 @@ use ezTreeBuilder\Base\AbstractBranch;
  *
  * Used to build \TreeBuilder\Base\Branch to be used by \TreeBuilder\Tree
  *
- * @package TreeBuilder
+ * @package ezTreeBuilder
  * @author Adrian Tilita <adrian@tilita.ro>
  * @version 1.0
  */
