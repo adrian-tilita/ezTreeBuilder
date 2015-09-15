@@ -1,9 +1,9 @@
 <?php
-namespace TreeBuilder\Adapter;
+namespace ezTreeBuilder\Adapter;
 
-use TreeBuilder\Base\AbstractAdapter;
-use TreeBuilder\Base\Adapter;
-use TreeBuilder\Item\TreeItem;
+use ezTreeBuilder\Base\AbstractAdapter;
+use ezTreeBuilder\Base\Adapter;
+use ezTreeBuilder\Item\TreeItem;
 
 class ArrayAdapter extends AbstractAdapter implements Adapter
 {

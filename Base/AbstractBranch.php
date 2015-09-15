@@ -1,7 +1,7 @@
 <?php
-namespace TreeBuilder\Base;
+namespace ezTreeBuilder\Base;
 
-use TreeBuilder\Base\Branch;
+use ezTreeBuilder\Base\Branch;
 
 /**
  * Branch asbtract class - Limited concern to \TreeBuilder\Tree

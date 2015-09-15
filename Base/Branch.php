@@ -1,5 +1,5 @@
 <?php
-namespace TreeBuilder\Base;
+namespace ezTreeBuilder\Base;
 
 /**
  * Base interface for a branch item

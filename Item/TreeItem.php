@@ -1,8 +1,8 @@
 <?php
-namespace TreeBuilder\Item;
+namespace ezTreeBuilder\Item;
 
-use TreeBuilder\Base\Branch;
-use TreeBuilder\Base\AbstractBranch;
+use ezTreeBuilder\Base\Branch;
+use ezTreeBuilder\Base\AbstractBranch;
 
 /**
  * TreeItem class - Limited concern to caller

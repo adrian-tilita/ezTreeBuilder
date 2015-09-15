@@ -1,5 +1,5 @@
 <?php
-namespace TreeBuilder\Base;
+namespace ezTreeBuilder\Base;
 
 /**
  * Minimum of an adapter public methods

@@ -1,7 +1,7 @@
 <?php
-namespace TreeBuilder\Base;
+namespace ezTreeBuilder\Base;
 
-use TreeBuilder\Base\Adapter;
+use ezTreeBuilder\Base\Adapter;
 
 /**
  * The base of an Adapter

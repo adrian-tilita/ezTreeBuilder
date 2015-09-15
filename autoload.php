@@ -1,5 +1,5 @@
 <?php
-namespace TreeBuilder;
+namespace ezTreeBuilder;
 
 function load($namespace)
 {

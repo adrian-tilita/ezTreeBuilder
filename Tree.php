@@ -1,8 +1,8 @@
 <?php
-namespace TreeBuilder;
+namespace ezTreeBuilder;
 
-use TreeBuilder\Base\Branch;
-use TreeBuilder\Base\Adapter;
+use ezTreeBuilder\Base\Branch;
+use ezTreeBuilder\Base\Adapter;
 
 /**
  * Tree builder class - generates the enire tree based on \TreeBuilder\Branch

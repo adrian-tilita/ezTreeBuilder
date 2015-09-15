@@ -1,10 +1,10 @@
 <?php
-namespace TreeBuilder;
+namespace ezTreeBuilder;
 
-use TreeBuilder\Tree;
-use TreeBuilder\Item\TreeItem;
-use TreeBuilder\Adapter\ArrayAdapter;
-use TreeBuilder\Adapter\LinearArrayAdapter;
+use ezTreeBuilder\Tree;
+use ezTreeBuilder\Item\TreeItem;
+use ezTreeBuilder\Adapter\ArrayAdapter;
+use ezTreeBuilder\Adapter\LinearArrayAdapter;
 
 require 'autoload.php';
 

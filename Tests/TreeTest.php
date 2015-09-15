@@ -1,8 +1,8 @@
 <?php
-namespace TreeBuilder\Tests;
+namespace ezTreeBuilder\Tests;
 
-use TreeBuilder\Tree;
-use TreeBuilder\Item\TreeItem;
+use ezTreeBuilder\Tree;
+use ezTreeBuilder\Item\TreeItem;
 
 class TreeTest extends \PHPUnit_Framework_TestCase
 {
