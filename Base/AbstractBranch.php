@@ -44,6 +44,12 @@ abstract class AbstractBranch
     private $right;
 
     /**
+     * Establish if the item is a leaf
+     * @var boolean
+     */
+    private $isLeaf;
+
+    /**
      * Set the Parent of the current branch
      * @param \TreeBuilder\Base\Branch $item
      * @return \TreeBuilder\Base\Branch
@@ -172,6 +178,24 @@ abstract class AbstractBranch
     public function getRight()
     {
         return $this->right;
+    }
+
+    /**
+     * Set the Leaf state
+     * @param boolean $isLeaf
+     * @return \TreeBuilder\Base\AbstractBranch
+     */
+    public function setIsLeaf($isLeaf) {
+        $this->isLeaf = $isLeaf;
+        return $this;
+    }
+
+    /**
+     * Return the leaf state of the item
+     * @return boolean
+     */
+    public function isLeaf() {
+        return $this->isLeaf;
     }
 
     /**

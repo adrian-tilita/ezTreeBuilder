@@ -127,7 +127,7 @@ class Tree
 
     /**
      * Add a new TreeItem
-     * @param TreeItem $item
+     * @param Branch $item
      */
     public function addBranch(Branch $item)
     {
@@ -173,6 +173,20 @@ class Tree
     }
 
     /**
+     * Return all leaf branches
+     * @return  array
+     */
+    public function getLeafs() {
+        $items = array();
+        foreach ($this->branches as $item) {
+            if ($item->isLeaf() === true) {
+                $items[] = $item;
+            }
+        }
+        return $items;
+    }
+
+    /**
      * Build the tree
      */
     public function buildTree()
@@ -198,6 +212,7 @@ class Tree
                 case (self::BUILD_MODE_COMPLETE):
                     $this->addDepth($this->compiledTree);
                     $this->addLeftRight($this->compiledTree);
+                    $this->markLeafs($this->compiledTree);
                     break;
             }
         }
@@ -252,8 +267,8 @@ class Tree
 
     /**
      * Add left->right fields to tree
-     * @param array $item
-     * @param int $left
+     * @param   array   $items
+     * @param   int     $left
      * @return int
      */
     private function addLeftRight(array $items, $left = 1)
@@ -271,6 +286,20 @@ class Tree
             $left = $right + 1;
         }
         return $right;
+    }
+
+    /**
+     * Mark leaf branches
+     * @param   array   $items
+     */
+    private function markLeafs($items) {
+        foreach ($items as $item) {
+            if ($item->hasChildren()) {
+                $this->markLeafs($item->getChildren());
+            } else {
+                $item->setIsLeaf(true);
+            }
+        }
     }
 
     /**
