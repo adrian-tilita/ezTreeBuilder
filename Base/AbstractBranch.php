@@ -86,6 +86,21 @@ abstract class AbstractBranch
     }
 
     /**
+     * Get the root parent of the current branch
+     * @return \TreeBuilder\Base\Branch
+     */
+    public function getRootParent() {
+        if ($this->hasParent() === false) {
+            return $this;
+        }
+        $parent = $this->getParent();
+        while ($parent->hasParent() === true) {
+            $parent = $parent->getParent();
+        }
+        return $parent;
+    }
+
+    /**
      * Adds a new branch child
      * @param \TreeBuilder\Base\Branch $item
      */
@@ -211,6 +226,7 @@ abstract class AbstractBranch
         $returnedArray['depth'] = $this->getDepth();
         $returnedArray['left'] = $this->getLeft();
         $returnedArray['right'] = $this->getRight();
+        $returnedArray['is_leaf'] = $this->isLeaf();
         return $returnedArray;
     }
 }
