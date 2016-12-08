@@ -13,6 +13,6 @@
         </testsuite>
     </testsuites>
     <logging>
-        <log type="coverage-html" target="coverage" lowUpperBound="35"/>
+        <log type="coverage-clover" target="coverage" lowUpperBound="35"/>
     </logging>
 </phpunit>

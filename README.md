@@ -1,3 +1,8 @@
+![CodeShip](https://codeship.com/projects/eb77a380-9eb3-0134-c4bd-7e4e3750070c/status?branch=master)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/adrian-tilita/ezTreeBuilder/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/adrian-tilita/ezTreeBuilder/?branch=master)
+[![Code Coverage](https://scrutinizer-ci.com/g/adrian-tilita/ezTreeBuilder/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/adrian-tilita/ezTreeBuilder/?branch=master)
+[![Build Status](https://scrutinizer-ci.com/g/adrian-tilita/ezTreeBuilder/badges/build.png?b=master)](https://scrutinizer-ci.com/g/adrian-tilita/ezTreeBuilder/build-status/master)
+
 # TreeBuilder
 Build a tree from a set of given Items based on parent
 
