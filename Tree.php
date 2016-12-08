@@ -150,7 +150,7 @@ class Tree
         if ($this->compiled === false) {
             $this->buildTree();
         }
-        if ($this->delegatedAdapter != null) {
+        if ($this->delegatedAdapter !== null) {
             $this->delegatedAdapter->setRawData($this->branches);
             $this->delegatedAdapter->setTree($this->compiledTree);
             return $this->delegatedAdapter->adapt();
@@ -167,7 +167,7 @@ class Tree
     public function getBranchById($branchId)
     {
         if (isset($this->branches[$branchId])) {
-            if ($this->delegatedAdapter != null) {
+            if ($this->delegatedAdapter !== null) {
                 $this->delegatedAdapter->setRawData($this->branches);
                 $this->delegatedAdapter->setTree(array($this->branches[$branchId]));
                 $adaptedData = $this->delegatedAdapter->adapt();
