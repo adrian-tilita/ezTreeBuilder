@@ -2,6 +2,7 @@
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/adrian-tilita/ezTreeBuilder/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/adrian-tilita/ezTreeBuilder/?branch=master)
 [![Code Coverage](https://scrutinizer-ci.com/g/adrian-tilita/ezTreeBuilder/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/adrian-tilita/ezTreeBuilder/?branch=master)
 [![Build Status](https://scrutinizer-ci.com/g/adrian-tilita/ezTreeBuilder/badges/build.png?b=master)](https://scrutinizer-ci.com/g/adrian-tilita/ezTreeBuilder/build-status/master)
+[![SensioLabsInsight](https://insight.sensiolabs.com/projects/e7fc9ff2-2dff-498e-a98a-0297960024a1/mini.png)](https://insight.sensiolabs.com/projects/e7fc9ff2-2dff-498e-a98a-0297960024a1)
 
 # TreeBuilder
 Build a tree from a set of given Items based on parent
