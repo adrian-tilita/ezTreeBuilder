@@ -3,7 +3,6 @@ namespace ezTreeBuilder\Adapter;
 
 use ezTreeBuilder\Base\AbstractAdapter;
 use ezTreeBuilder\Base\Adapter;
-use ezTreeBuilder\Item\TreeItem;
 
 class LinearArrayAdapter extends AbstractAdapter implements Adapter
 {

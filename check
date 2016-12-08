@@ -1,0 +1,25 @@
+#!/bin/sh
+BASEPATH=${PWD}
+VENDORS_BIN=/vendors/bin
+PHP_PATH=/usr/bin/php
+
+echo "----------------------------------------------------------------------"
+tput setaf 6
+echo "Running PHP CodeSniffer"
+tput sgr0
+echo "----------------------------------------------------------------------"
+$PHP_PATH $BASEPATH$VENDORS_BIN/phpcs --standard=phpcs.xml.dist
+
+echo "----------------------------------------------------------------------"
+tput setaf 6
+echo "Running PHP MD CodeSniffer"
+tput sgr0
+echo "----------------------------------------------------------------------"
+$PHP_PATH $BASEPATH$VENDORS_BIN/phpmd *.php text phpmd.xml.dist
+
+echo "----------------------------------------------------------------------"
+tput setaf 6
+echo "Running Tests"
+tput sgr0
+echo "----------------------------------------------------------------------"
+$PHP_PATH $BASEPATH$VENDORS_BIN/phpunit

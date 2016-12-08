@@ -1,10 +1,8 @@
 <?php
 namespace ezTreeBuilder\Base;
 
-use ezTreeBuilder\Base\Branch;
-
 /**
- * Branch asbtract class - Limited concern to \TreeBuilder\Tree
+ * Branch abstract class - Limited concern to \TreeBuilder\Tree
  *
  * @package ezTreeBuilder
  * @author Adrian Tilita <adrian@tilita.ro>
@@ -21,7 +19,7 @@ abstract class AbstractBranch
 
     /**
      * Reference to the current branch parent
-     * @var \TreeBuilder\Base\Branch
+     * @var Branch
      */
     private $parent;
 
@@ -51,8 +49,8 @@ abstract class AbstractBranch
 
     /**
      * Set the Parent of the current branch
-     * @param \TreeBuilder\Base\Branch $item
-     * @return \TreeBuilder\Base\Branch
+     * @param Branch $item
+     * @return Branch
      */
     public function setParent(Branch $item)
     {
@@ -74,7 +72,7 @@ abstract class AbstractBranch
 
     /**
      * Get the current branch's parent
-     * @return \TreeBuilder\Base\Branch
+     * @return Branch
      * @throws \Exception
      */
     public function getParent()
@@ -87,9 +85,10 @@ abstract class AbstractBranch
 
     /**
      * Get the root parent of the current branch
-     * @return \TreeBuilder\Base\Branch
+     * @return Branch
      */
-    public function getRootParent() {
+    public function getRootParent()
+    {
         if ($this->hasParent() === false) {
             return $this;
         }
@@ -102,7 +101,7 @@ abstract class AbstractBranch
 
     /**
      * Adds a new branch child
-     * @param \TreeBuilder\Base\Branch $item
+     * @param Branch $item
      */
     public function addChild(Branch $item)
     {
@@ -123,7 +122,7 @@ abstract class AbstractBranch
 
     /**
      * Return the current branch children
-     * @return array - array(\TreeBuilder\Base\Branch, \TreeBuilder\Base\Branch)
+     * @return array - array(Branch, Branch)
      * @throws \Exception
      */
     public function getChildren()
@@ -137,7 +136,7 @@ abstract class AbstractBranch
     /**
      * Set the branch depth
      * @param int $depth
-     * @return \TreeBuilder\Base\AbstractBranch
+     * @return AbstractBranch
      */
     public function setDepth($depth)
     {
@@ -157,7 +156,7 @@ abstract class AbstractBranch
     /**
      * Set Tree Left value
      * @param int $value
-     * @return \TreeBuilder\Base\AbstractBranch
+     * @return AbstractBranch
      */
     public function setLeft($value)
     {
@@ -178,7 +177,7 @@ abstract class AbstractBranch
     /**
      * Set Tree Right value
      * @param int $value
-     * @return \TreeBuilder\Base\AbstractBranch
+     * @return AbstractBranch
      */
     public function setRight($value)
     {
@@ -198,9 +197,10 @@ abstract class AbstractBranch
     /**
      * Set the Leaf state
      * @param boolean $isLeaf
-     * @return \TreeBuilder\Base\AbstractBranch
+     * @return AbstractBranch
      */
-    public function setIsLeaf($isLeaf) {
+    public function setIsLeaf($isLeaf)
+    {
         $this->isLeaf = $isLeaf;
         return $this;
     }
@@ -209,7 +209,8 @@ abstract class AbstractBranch
      * Return the leaf state of the item
      * @return boolean
      */
-    public function isLeaf() {
+    public function isLeaf()
+    {
         return $this->isLeaf;
     }
 

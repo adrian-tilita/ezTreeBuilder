@@ -32,6 +32,12 @@ class Tree
     const BUILD_MODE_COMPLETE = 2;
 
     /**
+     * Default parent id from where to start referencing
+     * @const int
+     */
+    const ROOT_PARENT_ID = 0;
+
+    /**
      * Wheather to log debug details
      * @var boolean
      */
@@ -154,29 +160,30 @@ class Tree
 
     /**
      * Return a branch by it's id
-     * @param int $id
+     * @param int $branchId
      * @return \TreeBuilder\Base\Branch
      * @throws \Exception
      */
-    public function getBranchById($id)
+    public function getBranchById($branchId)
     {
-        if (isset($this->branches[$id])) {
+        if (isset($this->branches[$branchId])) {
             if ($this->delegatedAdapter != null) {
                 $this->delegatedAdapter->setRawData($this->branches);
-                $this->delegatedAdapter->setTree(array($this->branches[$id]));
+                $this->delegatedAdapter->setTree(array($this->branches[$branchId]));
                 $adaptedData = $this->delegatedAdapter->adapt();
                 return isset($adaptedData[0]) ? $adaptedData[0] : $adaptedData;
             }
-            return $this->branches[$id];
+            return $this->branches[$branchId];
         }
-        throw new \Exception("Could not find branch with id {$id}!");
+        throw new \Exception("Could not find branch with id {$branchId}!");
     }
 
     /**
      * Return all leaf branches
      * @return  array
      */
-    public function getLeafs() {
+    public function getLeafs()
+    {
         $items = array();
         foreach ($this->branches as $item) {
             if ($item->isLeaf() === true) {
@@ -194,7 +201,7 @@ class Tree
         // reset compiled tree
         $this->compiledTree = array();
         if ($this->isDebugEnabled()) {
-            list($start_usec, $start_sec) = explode(" ", microtime());
+            list($startUsec, $startSec) = explode(" ", microtime());
         }
         // build for simple mode
         foreach ($this->branches as $id => $item) {
@@ -220,24 +227,24 @@ class Tree
             if (count($this->compiledTree)) {
                 $this->logDebug("No root branch declared!");
             }
-            list($end_usec, $end_sec) = explode(" ", microtime());
-            $diff_sec = intval($end_sec) - intval($start_sec);
-            $diff_usec = floatval($end_usec) - floatval($start_usec);
-            $this->logDebug("Compiled tree in " . floatval($diff_sec) + $diff_usec);
+            list($endUsec, $endSec) = explode(" ", microtime());
+            $diffSec = intval($endSec) - intval($startSec);
+            $diffUsec = floatval($endUsec) - floatval($startUsec);
+            $this->logDebug("Compiled tree in " . floatval($diffSec) + $diffUsec);
         }
         $this->compiled = true;
     }
 
     /**
      * Build the tree parent->child references
-     * @param int $id
+     * @param int $branchId
      * @param Branch $item
      */
-    private function buildBranchReference($id, Branch $item)
+    private function buildBranchReference($branchId, Branch $item)
     {
-        if ($item->getParentId() != 0) {
+        if ($item->getParentId() !== self::ROOT_PARENT_ID) {
             if (isset($this->branches[$item->getParentId()])) {
-                $this->branches[$id] = $item->setParent($this->branches[$item->getParentId()]);
+                $this->branches[$branchId] = $item->setParent($this->branches[$item->getParentId()]);
                 $this->branches[$item->getParentId()]->addChild($item);
             } else {
                 if ($this->isDebugEnabled()) {
@@ -292,7 +299,8 @@ class Tree
      * Mark leaf branches
      * @param   array   $items
      */
-    private function markLeafs($items) {
+    private function markLeafs($items)
+    {
         foreach ($items as $item) {
             if ($item->hasChildren()) {
                 $this->markLeafs($item->getChildren());

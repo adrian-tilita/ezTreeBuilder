@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<ruleset name="PHP CS Check">
+    <description>PSR2 Check for current code</description>
+
+    <file>Adapter/</file>
+    <file>Base/</file>
+    <file>Item/</file>
+    <file>Tests/</file>
+    <file>Tree.php</file>
+    <arg value="-extensions=php"/>
+    <arg value="-colors"/>
+    <rule ref="PSR2"/>
+</ruleset>

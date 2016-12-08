@@ -14,7 +14,7 @@ interface Branch
     /**
      * Set the tree item id
      * @param int $value
-     * @return \TreeBuilder\Base\Branch
+     * @return Branch
      */
     public function setId($value);
 
@@ -27,7 +27,7 @@ interface Branch
     /**
      * Set the parent's id
      * @param int $value
-     * @return \TreeBuilder\Base\Branch
+     * @return Branch
      */
     public function setParentId($value);
 
@@ -40,7 +40,7 @@ interface Branch
     /**
      * Store data to be passed for the tree item
      * @param mixed $value
-     * @return \TreeBuilder\Base\Branch
+     * @return Branch
      */
     public function setData($value);
 
@@ -52,8 +52,8 @@ interface Branch
 
     /**
      * Set the Parent of the current branch
-     * @param \TreeBuilder\Base\Branch $item
-     * @return \TreeBuilder\Base\Branch
+     * @param Branch $item
+     * @return Branch
      */
     public function setParent(Branch $item);
 
@@ -65,14 +65,14 @@ interface Branch
 
     /**
      * Get the current branch's parent
-     * @return \TreeBuilder\Base\Branch
+     * @return Branch
      * @throws \Exception
      */
     public function getParent();
 
     /**
      * Adds a new branch child
-     * @param \TreeBuilder\Base\Branch $item
+     * @param Branch $item
      */
     public function addChild(Branch $item);
  
@@ -84,7 +84,7 @@ interface Branch
 
     /**
      * Return the current branch children
-     * @return array - array(\TreeBuilder\Base\Branch, \TreeBuilder\Base\Branch)
+     * @return array - array(Branch, Branch)
      * @throws \Exception
      */
     public function getChildren();

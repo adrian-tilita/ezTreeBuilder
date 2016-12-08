@@ -1,0 +1,30 @@
+{
+  "name": "adrian-tilita/eztreebuilder",
+  "type": "library",
+  "description": "Nested set Tree Builder",
+  "keywords": ["nested set", "tree"],
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "Adrian Tilita",
+      "email": "adrian@tilita.ro"
+    }
+  ],
+  "config": {
+    "vendor-dir": "vendors"
+  },
+  "minimum-stability": "dev",
+  "require": {
+    "php": ">5.5.0"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "4.8.*",
+    "squizlabs/php_codesniffer": "2.*",
+    "phpmd/phpmd" : "@stable"
+  },
+  "autoload": {
+    "psr-4": {
+      "ezTreeBuilder\\": ""
+    }
+  }
+}

@@ -1,8 +1,6 @@
 <?php
 namespace ezTreeBuilder\Base;
 
-use ezTreeBuilder\Base\Adapter;
-
 /**
  * The base of an Adapter
  *
@@ -28,7 +26,7 @@ abstract class AbstractAdapter implements Adapter
     /**
      * Sets the raw branches
      * @param array $data
-     * @return \TreeBuilder\Base\Adapter
+     * @return Adapter
      */
     public function setRawData(array $data)
     {
@@ -48,7 +46,7 @@ abstract class AbstractAdapter implements Adapter
     /**
      * Sets the tree data
      * @param array $data
-     * @return \TreeBuilder\Base\Adapter
+     * @return Adapter
      */
     public function setTree(array $data)
     {
